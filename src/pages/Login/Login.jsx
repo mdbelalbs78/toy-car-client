@@ -1,24 +1,37 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
+
 const Login = () => {
 
-  const {signIn} = useContext(AuthContext)
+  const {signIn,googleSignIn} = useContext(AuthContext)
+
+  
+  const handleGoogleSignIn = () => {
+       
+    googleSignIn()
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error => console.log(error))
+  }
 
     const handleLogin = event => {
-        event.preventDefault();
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+
         signIn(email,password)
 
         .then(result => {
           const user = result.user;
           console.log(user);
+          form.reset()
         })
         .catch(error => console.log(error))
     }
@@ -49,6 +62,7 @@ const Login = () => {
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>
         </form>
+        <button onClick={handleGoogleSignIn}>Google</button>
         <p>Create a new account<Link className='text-orange-600 font-bold' to='/signup'> Sign Up</Link> </p>
       </div>
     </div>
