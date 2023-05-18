@@ -1,4 +1,5 @@
 import React from 'react';
+import img1 from '../assets/404.png'
 
 const Error = () => {
     return (

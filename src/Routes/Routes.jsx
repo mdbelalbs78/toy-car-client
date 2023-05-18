@@ -3,6 +3,9 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import img1 from '../../../../../../../../Batch7/MongoDB/regular-toy-cars/src/assets/404.png'
 import Error from "../pages/Error";
+import Login from "../pages/Login/Login";
+import SignUp from "../pages/SignUp/SignUp";
+
 
 const router = createBrowserRouter([
   {
@@ -14,9 +17,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      
-
-    
+      {
+        path: '/login',
+        element: <Login></Login>
+      } ,
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      }
     ],
   },
 ]);
