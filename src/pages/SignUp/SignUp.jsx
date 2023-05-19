@@ -1,33 +1,45 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
 
-  const {createUser} = useContext(AuthContext)
+  const {createUser,logOut} = useContext(AuthContext)
+
+  const navigate = useNavigate()
 
     const handleSignIn = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
+        const photo = form.photo.value;
         const password = form.password.value;
         console.log(name,email,password);
 
         createUser(email,password)
         .then(result => {
           const user = result.user;
-          console.log(user);
+          updateUser(user,name,photo)
+          logOut();
+          navigate('/login')
         })
         .then(error => console.log(error))
     }
 
+    const updateUser = (user, name, photo) => {
+      updateProfile(user, {
+          displayName: name,
+          photoURL: photo,
+      } )
+  }
     return (
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col ">
     <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
       <div className="card-body">
-      <h1 className="text-3xl font-bold text-center">Sign Up</h1>
+      <Link  className="text-3xl font-bold text-center">Sign Up</Link>
         <form onSubmit={handleSignIn}>
         <div className="form-control">     
           <label className="label">        
@@ -40,6 +52,13 @@ const SignUp = () => {
             <span className="label-text">Email</span>
           </label>
           <input type="text" name='email' placeholder="email" className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo Url</span>
+          </label>
+          <input type="text" name='photo' placeholder="photo url" className="input input-bordered" />
+          
         </div>
         <div className="form-control">
           <label className="label">

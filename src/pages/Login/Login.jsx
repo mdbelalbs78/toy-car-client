@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
@@ -8,6 +8,7 @@ const Login = () => {
 
   const {signIn,googleSignIn} = useContext(AuthContext)
 
+  const navigate = useNavigate()
   
   const handleGoogleSignIn = () => {
        
@@ -32,6 +33,7 @@ const Login = () => {
           const user = result.user;
           console.log(user);
           form.reset()
+          navigate('/')
         })
         .catch(error => console.log(error))
     }
@@ -41,7 +43,7 @@ const Login = () => {
   <div className="hero-content flex-col ">
     <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
       <div className="card-body">
-      <h1 className="text-3xl font-bold text-center">Login</h1>
+      <Link  className="text-3xl font-bold text-center">Login</Link>
         <form onSubmit={handleLogin}>
         <div className="form-control">     
           <label className="label">        
