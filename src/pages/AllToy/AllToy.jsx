@@ -12,10 +12,10 @@ const AllToy = () => {
     return (
         <div>
             <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-full bg-gray-500">
     {/* head */}
-    <thead>
-      <tr>
+    <thead >
+      <tr >
         
         <th>Name</th>
        
@@ -30,7 +30,7 @@ const AllToy = () => {
     </thead>
     <tbody>
       {
-        all.map(data => <tr>
+        all.map(data => <tr >
             <th>{data.name}</th>
             
             <td>{data.seller}</td>

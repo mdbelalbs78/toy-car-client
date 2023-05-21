@@ -41,29 +41,9 @@ const AddToy = () => {
         .then(data => console.log(data))
     };
       
-    //     fetch('https://toy-marketplace-server-neon.vercel.app/toys', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(newToy),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         console.log(data);
-    //         if(data.insertedId){
-    //           alert('done');
-    //           form.reset();
-    //           // navigate('/');
-    //       }
-    //       })
-    //       .catch((error) => {
-    //         console.log(error);
-    //         // Show an error message
-    //       });
-    //   };
+    
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 bg-gray-100">
     <div className="flex justify-center items-center min-h-screen">
     <form onSubmit={handleInputFrom}
       id="addToyForm"

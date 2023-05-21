@@ -1,40 +1,92 @@
-import React from 'react';
+import React from "react";
 
 const Blog = () => {
-    return (
-        <div className='mb-5 '>
-            <button className='mb-5' onClick={generatePDF}>Download</button>
-            
-            <div className='border p-3 mb-3' id='pdf-element'>
-                <h3>Tell us the differences between uncontrolled and controlled components</h3>
-                <h4 className='mb-0 mt-4'>Uncontrolled Components:</h4>
-                <p><small>In an uncontrolled component, the form input is managed by the browser. The component does not store the input value in its state, and the browser handles the updates to the input value.</small></p>
-                <p><small>In an uncontrolled component, the form input is managed by the browser. The component does not store the input value in its state, and the browser handles the updates to the input value.</small></p>
-                <h4>Controlled Components:</h4>
-                <p><small>In a controlled component, the form input is managed by the component's state. The component stores the input value in its state, and updates to the input value are handled by the component.</small></p>
-                <p><small>To retrieve the value of a controlled component, you can simply read the value from the component's state.</small></p>
-            </div>
-            <div className='border p-3 '>
-                <h4>How to validate React props using PropTypes</h4>
-                <li>PropTypes.any : The prop can be of any data type.</li>
-                <li>PropTypes.bool : The prop should be a Boolean.</li>
-                <li>PropTypes.number : The prop should be a number.</li>
-                <li>PropTypes.string : The prop should be a string.</li>
-                <li>PropTypes.func : The prop should be a function.</li>
-                <li>PropTypes.array : The prop should be an array.</li>
-            </div>
-            <div className='border p-3 mt-3 '>
-                 <h4>Tell us the difference between nodejs and express js</h4>
-                 <li>nodejs: NodeJS is the package, which provides the JavaScript run-time environment</li>
-                 <li>express js : Express is a framework that sits on top of NodeJS and helps us to handle requests and responses</li>
-            </div>
-            <div className='border p-3 mt-3 '>
-                 <h4>What is a custom hook, and why will you create a custom hook?</h4>
-                 <li>custom hook : A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks</li>
-                 <li>why will create a custom hook? : Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code.</li>
-            </div>
-        </div>
-    );
+  return (
+    <div className="mb-5 ">
+
+      <div className="border p-3 mb-3" id="pdf-element">
+        <h3>
+          What is an access token and refresh token? How do they work and where
+          should we store them on the client-side?
+        </h3>
+        <h4 className="mb-0 mt-4"> Refresh token:</h4>
+        <p>
+          <small>
+            {" "}
+            A refresh token just helps you re-validate a user without them
+            having to re-enter their login credentials multiple times. The
+            access token is re-issued, provided the refresh token is a valid one
+            requesting permission to access confidential resources. This method
+            provides an enhanced user experience all while keeping a robust
+            security interface.
+          </small>
+        </p>
+        <h2 className="text-3xl">
+          How do they work and where should we store them on the client-side?
+        </h2>
+        <p>
+          <small>
+            There are lots of questions/answers about this topic on SO, but
+            regarding the refresh token the answer are not clear. Access token
+            and refresh token shouldn't be stored in the local/session storage,
+            because they are not a place for any sensitive data. Hence I would
+            store the access token in a httpOnly cookie (even though there is
+            CSRF) and I need it for most of my requests to the Resource Server
+            anyway.
+          </small>
+        </p>
+      </div>
+
+      <div className="border p-3 mt-3 ">
+        <h3 className="text-4xl">Compare SQL and NoSQL databases?</h3>
+        <h2 className="tex-2xl">
+          SQL:
+          <li>These databases have fixed or static or predefined schema</li>
+          <li>These databases are not suited for hierarchical data storage.</li>
+          <li>These databases are best suited for complex queries</li>
+        </h2>
+        <h2 className="tex-2xl">
+          NoSQL:
+          <li>Non-relational or distributed database system.</li>
+          <li>They have a dynamic schema</li>
+          <li>These databases are best suited for hierarchical data storage</li>
+          <li>These databases are not so good for complex queries</li>
+        </h2>
+      </div>
+      <div className="border p-3 mt-3 ">
+        <h4>What is express js? What is Nest JS?</h4>
+        <li>
+          Express.js is a minimalistic and flexible web application framework
+          for Node.js. It provides a simple and intuitive way to build web
+          applications and APIs. Express.js simplifies the process of handling
+          HTTP requests, routing, and implementing middleware functions. It is
+          widely used in the development of server-side applications and is
+          known for its simplicity and ease of use.
+        </li>
+        <li>
+          Nest. js is one of the fastest-growing Node. js frameworks for
+          building efficient, scalable, and enterprise-grade backend
+          applications using Node. js.
+        </li>
+      </div>
+      <div className="border p-3 mt-3 ">
+        <h4>What is MongoDB aggregate and how does it work?</h4>
+        <li>
+          Aggregation is a way of processing a large number of documents in a
+          collection by means of passing them through different stages. The
+          stages make up what is known as a pipeline. The stages in a pipeline
+          can filter, sort, group, reshape and modify documents that pass
+          through the pipeline. One of the most common use cases of Aggregation
+          is to calculate aggregate values for groups of documents. This is
+          similar to the basic aggregation available in SQL with the GROUP BY
+          clause and COUNT, SUM and AVG functions. MongoDB Aggregation goes
+          further though and can also perform relational-like joins, reshape
+          documents, create new and update existing collections, and so on
+        </li>
+        
+      </div>
+    </div>
+  );
 };
 
 export default Blog;
