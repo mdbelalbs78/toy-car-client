@@ -13,8 +13,8 @@ const Navbar = () => {
      <li><Link to='/'>Home</Link></li>
      <li><Link to='/allToy'>All Toys</Link></li>
      <li><Link to='/myToy'>My Toys</Link></li>
-     <li><Link to='addToy'>Add A Toy</Link></li>
-     <li><Link to='blog'>Blogs</Link></li>
+     <li><Link to='/addToy'>Add A Toy</Link></li>
+     <li><Link to='/blog'>Blogs</Link></li>
   </>
     return (
         <div className="navbar bg-base-100 h-28 mb-3">

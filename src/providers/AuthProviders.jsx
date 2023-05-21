@@ -9,9 +9,16 @@ const auth = getAuth(app)
 
 const AuthProviders = ({children}) => {
     const [user, setUser] = useState(null);
+    const [toy, seToy] = useState([]);
     const [loading,setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/services')
+        .then(res => res.json())
+        .then(data => seToy(data))
+    },[])
 
     const createUser = (email,password) => {
         
@@ -50,7 +57,8 @@ const AuthProviders = ({children}) => {
          createUser,
          signIn,
          googleSignIn,
-         logOut
+         logOut,
+         toy
     }
 
     return (

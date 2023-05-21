@@ -1,10 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
-import img1 from '../../../../../../../../Batch7/MongoDB/regular-toy-cars/src/assets/404.png'
 import Error from "../pages/Error";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import Blog from "../Blog/Blog";
+import AllToy from "../pages/AllToy/AllToy";
+import AddToy from "../pages/AddToy/AddToy";
+import MyToy from "../pages/MyToy/MyToy";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -22,8 +26,24 @@ const router = createBrowserRouter([
         element: <Login></Login>
       } ,
       {
+        path: '/blog',
+        element: <Blog></Blog>
+      },
+      {
+        path: 'allToy',
+        element: <AllToy></AllToy>
+      },
+      {
+        path: 'myToy',
+        element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
+      },
+      {
         path: '/signup',
         element: <SignUp></SignUp>
+      },
+      {
+        path:'addToy',
+        element: <AddToy></AddToy>
       }
     ],
   },
