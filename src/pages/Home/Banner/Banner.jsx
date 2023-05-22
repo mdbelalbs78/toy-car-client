@@ -3,9 +3,15 @@ import img1 from '../../../assets/banner1.jpg'
 import img2 from '../../../assets/banner.2.jpg'
 import img3 from '../../../assets/banner3.jpg'
 import img4 from '../../../assets/banner4.jpg'
+import { Helmet } from "react-helmet";
 const Banner = () => {
   return (
     <div className="carousel w-full h-[600px]">
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Regular Toy Car</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
     <div id="slide1" className="carousel-item relative w-full">
       <img
         src={img1}
