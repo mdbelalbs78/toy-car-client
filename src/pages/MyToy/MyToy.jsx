@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
+import { Link } from 'react-router-dom';
 
 const MyToy = () => {
 
@@ -20,6 +21,8 @@ const MyToy = () => {
           }
         })
     }
+
+  
     
     useEffect(()=>{
         fetch(`http://localhost:5000/servicess/${user.email}`)
@@ -52,7 +55,7 @@ const MyToy = () => {
             <td>{data.price}</td>         
             <td>{data.quantity}</td>
             <th>{data.description}</th>
-            <th><button  className="btn btn-success">Update</button></th>
+            <th><Link to={`/updateToy/${data._id}`} className="btn btn-success">Update</Link></th>
             <th><button onClick={()=>handleDelete(data._id)} className="btn btn-error">Delete</button></th>
           </tr>)
       }
