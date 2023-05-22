@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 const ViewPage = () => {
   const toyDetails = useLoaderData();
@@ -29,7 +30,7 @@ const ViewPage = () => {
             <p>price:{price}</p>
             <p>quantity:{quantity}</p>
             <p>category:{category}</p>
-            <p>rating:{rating}</p>
+            <p> <FaStar/> rating:{rating}</p>
             <p>seller:{seller}</p>
           </div>
         </div>
