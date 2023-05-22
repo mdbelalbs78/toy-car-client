@@ -7,20 +7,26 @@ import img4 from "../../../assets/gall4.jpg";
 
 const Gallery = () => {
   return (
-    <div className="mt-5">
+    <div className="mt-5" >
       <h2 className="text-5xl font-bold  text-center p-3">Our Gallery</h2>
       <p className="font-bold text-center">Don't deny yourself the pleasure of driving the best  premium cars <br /> from around the world here and now</p>
       <section className="py-4 dark:bg-gray-800 dark:text-gray-50">
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4" data-aos="fade-up"
+     data-aos-duration="3000" >
           <img
             src={img5}
             alt=""
-            className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
+            className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square" data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
           />
 
           <img
             alt=""
-            className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+            className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
             src={img1}
           />
           <img

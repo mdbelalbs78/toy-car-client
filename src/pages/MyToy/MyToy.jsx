@@ -37,7 +37,7 @@ const MyToy = () => {
             <td>{data.quantity}</td>
             <th>{data.description}</th>
             <th><button className="btn btn-success">Update</button></th>
-            <th><button className="btn btn-error">Update</button></th>
+            <th><button className="btn btn-error">Delete</button></th>
           </tr>)
       }
       

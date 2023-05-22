@@ -17,7 +17,7 @@ const Navbar = () => {
      <li><Link to='/blog'>Blogs</Link></li>
   </>
     return (
-        <div className="navbar bg-base-100 h-28 mb-3">
+        <div className="navbar bg-base-100 h-28 mb-3" data-aos="flip-left">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
