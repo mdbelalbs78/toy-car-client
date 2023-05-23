@@ -18,7 +18,7 @@ const AuthProviders = ({children}) => {
         fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => seToy(data))
-    },[])
+    },[]) 
 
     const createUser = (email,password) => {
         
