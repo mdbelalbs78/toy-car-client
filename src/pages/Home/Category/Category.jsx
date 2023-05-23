@@ -23,6 +23,10 @@ const Category = () => {
   console.log(categorys);
   return (
     <div className="text-center">
+       <Helmet>
+            <title>category</title>
+           
+        </Helmet>
       <Tabs>
         <TabList>
          
