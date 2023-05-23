@@ -22,7 +22,7 @@ const MyToy = () => {
         })
     }
 
-  
+ 
     
     useEffect(()=>{
         fetch(`http://localhost:5000/servicess/${user.email}`)
@@ -62,8 +62,6 @@ const MyToy = () => {
       
     </tbody>
   </table>
-
-  
 
 </div>
             

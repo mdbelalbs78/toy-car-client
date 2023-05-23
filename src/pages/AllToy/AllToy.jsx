@@ -1,8 +1,19 @@
 import React, {  useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const AllToy = () => {
     const [all,setAll] = useState([])
+
+    const [toySearch,setToySearch] = useState('')
+
+    const handleSearch = () => {
+         fetch(`http://localhost:5000/search/${toySearch}`)
+         .then(res => res.json())
+         .then(data => {
+          setAll(data)
+         })
+    }
 
     useEffect(()=>{
         fetch('http://localhost:5000/services')
@@ -12,9 +23,17 @@ const AllToy = () => {
     console.log(all);
     return (
         <div>
+           <Helmet>
+            <title>All Toy</title>
+           
+        </Helmet>
+         <div className='text-center m-10'>
+         <input onChange={(e)=>setToySearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-accent w-full max-w-xs" />
+         <button onClick={handleSearch} className='bg-blue-400 p-3 ms-3'>Click</button>
+         </div>
             <div className="overflow-x-auto">
   <table className="table w-full">
-    {/* head */}
+    
     <thead >
       <tr >
         

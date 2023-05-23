@@ -77,7 +77,7 @@ const Update = () => {
         >
           Update
         </button> 
-        <Link to='/myToy'>Back</Link>
+        <Link className="bg-blue-400 text-white font-bold py-2 px-4 rounded mx-3" to='/myToy'>Back</Link>
         
     </form>
     
