@@ -35,7 +35,7 @@ const Category = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3  sm:grid-cols gap-4">
             {categorys.slice(0, 3).map((data) => (
               <div key={data._id}>
                 <div className="card w-96 bg-base-100 shadow-xl">
@@ -60,7 +60,7 @@ const Category = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3  sm:grid-cols gap-4">
             {categorys.slice(0, 3).map((data) => (
               <div key={data._id}>
                 <div className="card w-96 bg-base-100 shadow-xl">
@@ -85,7 +85,7 @@ const Category = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3  sm:grid-cols gap-4">
             {categorys.slice(0, 3).map((data) => (
               <div key={data._id}>
                 <div className="card w-96 bg-base-100 shadow-xl">
